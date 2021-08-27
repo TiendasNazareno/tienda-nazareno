@@ -1,0 +1,25 @@
+#productos .contenido{
+    display:flex; /*coloca todo a la par */
+    justify-content: center;
+    flex-wrap: wrap;/*si no caba se baja*/
+    
+}
+
+#productos img{
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+     background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+     border: 5px solid black;
+}
+
+#productos article{
+    margin: 15px;
+}
+
+#productos h2,h4{
+    text-align: center;
+}

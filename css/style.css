@@ -1,0 +1,23 @@
+#container {
+    width: 580px;
+    height: 250px;
+    margin: 0 auto;
+    border: 1px solid black;
+    text-align: center;
+  }
+  #fuego {
+    background-color: #ffd54c;
+   }
+   .tipo {
+    flex-grow: 1;
+   }
+   .padre {  
+    width: 580px;
+    height: 120px;
+    display: flex;
+  }
+
+  img {
+      width: 10%;
+      cursor: move;
+  }

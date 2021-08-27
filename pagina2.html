@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tiendas Nazareno</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/all.css">  
+    <link rel="stylesheet" href="css/fontello.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+         
+     <header> 
+  
+		<div class="contenido">
+			<h1 class="icon-laptop">Tienda Nazareno</h1>
+
+			<input type="checkbox" id="barramenu">
+			<label class="icon-menu"for="barramenu"></label>
+
+			<nav class="menu">
+				<a href="index.html">Inicio</a>
+				<a href="">Comprar</a>
+
+			  <!-- <a href="">Estudiantes</a>-->
+			</nav>
+
+		</div>    
+    </header>
+          
+    <div id="prueba">
+    	   <button onclick="save()" ondrop="drop(event)" ondragover="allowDrop(event)" dropArea="true">
+			<div class="cart-box">
+				<a class="cart-container">
+					<div class="cart-image">
+						<i class="fas fa-shopping-cart" ></i>
+						<div class="cart-counter" id="counter">0</div>
+					</div>
+				</a>
+			</div>
+        </button> 
+    </div>   
+  
+    <section id="productos">
+     
+        <!--hr-->
+        <div id="items" class="contenedorProductos">
+        </div>
+        <!--TEMPLATE PRODUCTOS-->
+        <template id="template-productos">
+            <article class="articulo">
+			<section class="imgSection">
+				<img ondragstart="drag(event)" draggable="true">
+			</section>
+			<section class="descSection">
+				<h5></h5>
+                <h6></h6>
+			</section>
+			</article>
+        </template>
+        
+    </section>
+    
+     
+	<script type="application/javascript">
+	function getIP(json) {
+			//document.write("My public IP address is: ", json.ip);
+
+	var ipJason = json.ip;
+			  //document.write("<br>IP: " , a);
+	sessionStorage.setItem('clave', json.ip);
+		console.log(json.ip);
+	}	
+	</script>
+	<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>  
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+		
+		var ip = sessionStorage.getItem('clave');
+		sessionStorage.clear();
+        //var ip = '181.174.105.198';
+        var access_key = '341db5b25e9b9a0dbe5ac47a0755d156';
+		
+        // get the API result via jQuery.ajax
+        $.ajax({
+            url: 'http://api.ipstack.com/' + ip + '?access_key=' + access_key,
+            dataType: 'json',
+            success: function (json) {
+
+                // output the "capital" object inside "location"
+                $("span").text(json.location);
+                //alert(json.country_name);
+				//document.write("Pais; ", json.country_name);
+				document.getElementById('pais').innerHTML = "Pais visitante: "+json.country_name;
+            }
+        });
+    </script>
+     <footer>
+        <div class ="contenido">
+            <p class="copy"> Tienda Nazareno &copy; 2021</p>
+            <h3 id="pais"></h3>
+            <div class="redes">
+                <a  class="icon-facebook-squared" href="http://www.FACEBOOK.com/"></a>
+                <a class="icon-instagram" href="http://www.instagram.com/"></a>
+                <a class="icon-gmail" href="mailto:FranciscoSub@gmail.com"></a>
+            </div>
+        </div>
+    </footer>                       
+</body>
+</html>
+<script  src="js/app.js"></script>
+
+<script src="DragDropTouch.js"></script>
+
+
+
+
+

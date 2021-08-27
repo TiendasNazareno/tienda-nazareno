@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tiendas Nazareno</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/fontello.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body id="cuerpo">
+   
+	<header> 
+    	<div class="contenido">
+        <h1 class="icon-laptop">Tienda Nazareno</h1>
+      
+        <input type="checkbox" id="barramenu">
+        <label class="icon-menu"for="barramenu"></label>
+        
+        <nav class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="pagina2.html">Comprar</a>
+        </nav>
+    </div>
+          
+    </header>
+  
+   
+    <section id="productos">
+        <div id="headerCarreta">
+			<label>Total a Pagar: </label>
+			<P id="totals"></P>
+        </div>
+        <h3 id="titulocompra">Productos a comprar</h3>      
+        <hr>
+        
+        
+        
+        <div id="itemscomprar" class="contenedorProductosComprar">
+        </div>
+        
+        <div id="conf">
+   			<button id="confirmar2" onclick="confirmar()">Confirmar Compra</button> 
+   		</div>
+        
+        <!--TEMPLATE PRODUCTOS-->
+        <template id="template-productos">
+            <article class="articulo2">
+			<section class="imgSection2">
+				<img id="img2">
+			</section>
+			<section class="descSection">
+				<h5 class="comprasInfo"></h5>
+                <h6 class="comprasInfo"></h6>
+                <h3></h3>
+                <p id="tProducto"></p>
+               <!-- <button onclick="edit(event)">Editar</button> -->
+                <i class="fas fa-plus"></i>
+                <i class="fas fa-minus"></i>
+                <i class="fa fa-trash"></i>
+			</section>
+		    </article>
+        </template>    
+    </section>
+
+</body>
+</html>
+<script src="js/app2.js"></script>
